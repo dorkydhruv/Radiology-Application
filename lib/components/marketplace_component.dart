@@ -1,5 +1,6 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:radiology_app/constants.dart';
 
 class MarketplaceComponent extends StatelessWidget {
@@ -55,9 +56,8 @@ class MarketplaceComponent extends StatelessWidget {
                   ),
                 ),
               ),
-              Positioned(
-                left: 10,
-                top: 10,
+              Padding(
+                padding: const EdgeInsets.only(left: 10, top: 10),
                 child: Container(
                   width: width * 0.2,
                   height: height * 0.03,
@@ -77,32 +77,28 @@ class MarketplaceComponent extends StatelessWidget {
                   ),
                 ),
               ),
-              const Positioned(
+              Positioned(
                 bottom: 10,
                 left: 0,
-                child: Column(
-                  children: [
-                    Positioned(
-                        child: Text(
-                      " 50% OFF",
-                      textAlign: TextAlign.center,
+                child: RichText(
+                  textAlign: TextAlign.center,
+                  text: const TextSpan(
+                      text: "50% OFF\n",
                       style: TextStyle(
                           color: Colors.white,
                           fontSize: 20,
                           fontFamily: "Avenir",
                           fontWeight: FontWeight.w900),
-                    )),
-                    Positioned(
-                        child: Text(
-                      "  UPTO ₹1000",
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 16,
-                          fontFamily: "Avenir",
-                          fontWeight: FontWeight.w600),
-                    ))
-                  ],
+                      children: [
+                        TextSpan(
+                          text: "  UPTO ₹1000",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 16,
+                              fontFamily: "Avenir",
+                              fontWeight: FontWeight.w600),
+                        ),
+                      ]),
                 ),
               ),
               const Positioned(
@@ -192,25 +188,22 @@ class MarketplaceComponent extends StatelessWidget {
                 const SizedBox(
                   height: 10,
                 ),
-                Positioned(
-                  bottom: 0,
-                  child: Container(
-                    padding: const EdgeInsets.all(10),
-                    width: width * 0.28,
-                    decoration: BoxDecoration(
-                      color: Colors.grey.withOpacity(0.2),
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    child: const Text(
-                      "View Details",
-                      style: TextStyle(
-                          color: primaryColor,
-                          fontSize: 16,
-                          fontFamily: "Avenir",
-                          fontWeight: FontWeight.w900),
-                    ),
+                Container(
+                  padding: const EdgeInsets.all(10),
+                  width: width * 0.28,
+                  decoration: BoxDecoration(
+                    color: Colors.grey.withOpacity(0.2),
+                    borderRadius: BorderRadius.circular(20),
                   ),
-                )
+                  child: const Text(
+                    "View Details",
+                    style: TextStyle(
+                        color: primaryColor,
+                        fontSize: 16,
+                        fontFamily: "Avenir",
+                        fontWeight: FontWeight.w900),
+                  ),
+                ),
               ],
             ),
           ),
@@ -219,3 +212,26 @@ class MarketplaceComponent extends StatelessWidget {
     );
   }
 }
+
+
+
+// Positioned(
+//                         child: Text(
+//                       " 50% OFF",
+//                       textAlign: TextAlign.center,
+//                       style: TextStyle(
+//                           color: Colors.white,
+//                           fontSize: 20,
+//                           fontFamily: "Avenir",
+//                           fontWeight: FontWeight.w900),
+//                     )),
+//                     Positioned(
+//                         child: Text(
+//                       "  UPTO ₹1000",
+//                       textAlign: TextAlign.center,
+//                       style: TextStyle(
+//                           color: Colors.white,
+//                           fontSize: 16,
+//                           fontFamily: "Avenir",
+//                           fontWeight: FontWeight.w600),
+//                     ))
