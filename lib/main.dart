@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:radiology_app/components/tab_text.dart';
 import 'package:radiology_app/constants.dart';
 import 'package:radiology_app/tabs/marketplace.dart';
@@ -34,7 +33,8 @@ class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: "Radiology App",
+        debugShowCheckedModeBanner: false,
+        title: "Radiology",
         theme: ThemeData(
           colorScheme: const ColorScheme.light(
             primary: primaryColor,
@@ -46,35 +46,40 @@ class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
           appBar: AppBar(
             backgroundColor: appBarColor,
             leading: IconButton(
-              icon: const CircleAvatar(
-                backgroundColor: Colors.white,
-                child: Icon(
-                  Icons.arrow_back_ios_new_sharp,
-                  color: primaryColor,
+              icon: Container(
+                margin: const EdgeInsets.all(5),
+                padding: const EdgeInsets.all(2),
+                decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: appBarColor,
+                    border: Border.all(color: primaryColor)),
+                child: const Center(
+                  child: Icon(
+                    Icons.arrow_back_ios_new_sharp,
+                    color: primaryColor,
+                    size: 20,
+                  ),
                 ),
               ),
               onPressed: () {},
             ),
             title: const Text(
-              "Radiology App",
+              "Radiology",
               style: TextStyle(
                 fontFamily: "Avenir",
-                fontWeight: FontWeight.bold,
+                fontWeight: FontWeight.w800,
                 fontSize: 24,
               ),
             ),
             actions: [
               IconButton(
-                icon: const Icon(
-                  Icons.favorite_border_outlined,
-                  color: Colors.red,
-                ),
+                icon: Image.asset("assets/img/heart.png"),
                 onPressed: () {},
               ),
               IconButton(
-                icon: const Icon(
-                  FontAwesomeIcons.share,
-                  color: primaryColor,
+                icon: Image.asset(
+                  "assets/img/share.png",
+                  scale: 0.8,
                 ),
                 onPressed: () {},
               ),

@@ -1,6 +1,5 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:radiology_app/constants.dart';
 
 class MarketplaceComponent extends StatelessWidget {
@@ -19,10 +18,10 @@ class MarketplaceComponent extends StatelessWidget {
           Stack(
             children: [
               SizedBox(
-                height: height * 0.8,
-                width: width * 0.38,
+                height: height,
+                width: width * 0.4,
                 child: ClipRRect(
-                  borderRadius: BorderRadius.circular(20),
+                  borderRadius: BorderRadius.circular(10),
                   child: Image.asset(
                     "assets/img/marketplace.jpeg",
                     fit: BoxFit.cover,
@@ -35,13 +34,13 @@ class MarketplaceComponent extends StatelessWidget {
                 right: 0,
                 child: ClipRRect(
                   borderRadius: const BorderRadius.only(
-                    bottomLeft: Radius.circular(20),
-                    bottomRight: Radius.circular(20),
+                    bottomLeft: Radius.circular(10),
+                    bottomRight: Radius.circular(10),
                   ),
                   child: BackdropFilter(
                     filter: ImageFilter.blur(sigmaX: 0.3, sigmaY: 0.3),
                     child: Container(
-                      height: height * 0.07,
+                      height: height * 0.2,
                       width: width * 0.4,
                       decoration: BoxDecoration(
                           gradient: LinearGradient(
@@ -49,6 +48,9 @@ class MarketplaceComponent extends StatelessWidget {
                             Colors.black.withOpacity(0.8),
                             Colors.black.withOpacity(0.5),
                             Colors.black.withOpacity(0.2),
+                            Colors.black.withOpacity(0.1),
+                            Colors.black.withOpacity(0.05),
+                            Colors.black.withOpacity(0.01)
                           ],
                               begin: Alignment.bottomCenter,
                               end: Alignment.topCenter)),
@@ -59,42 +61,48 @@ class MarketplaceComponent extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(left: 10, top: 10),
                 child: Container(
-                  width: width * 0.2,
-                  height: height * 0.03,
-                  decoration: BoxDecoration(
-                    color: const Color.fromARGB(255, 0, 113, 206),
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  child: const Center(
-                    child: Text(
-                      "Verified ✅",
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 12,
-                          fontFamily: "Avenir",
-                          fontWeight: FontWeight.w900),
+                    padding: const EdgeInsets.all(4),
+                    decoration: BoxDecoration(
+                      color: const Color.fromARGB(255, 0, 113, 206),
+                      borderRadius: BorderRadius.circular(10),
                     ),
-                  ),
-                ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        const Text(
+                          "Verified",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 10,
+                              fontFamily: "Avenir",
+                              fontWeight: FontWeight.w800),
+                        ),
+                        Image.asset(
+                          "assets/img/tick.png",
+                          scale: 5,
+                        )
+                      ],
+                    )),
               ),
               Positioned(
                 bottom: 10,
-                left: 0,
+                left: 10,
                 child: RichText(
                   textAlign: TextAlign.center,
                   text: const TextSpan(
                       text: "50% OFF\n",
                       style: TextStyle(
                           color: Colors.white,
-                          fontSize: 20,
+                          fontSize: 18,
                           fontFamily: "Avenir",
                           fontWeight: FontWeight.w900),
                       children: [
                         TextSpan(
-                          text: "  UPTO ₹1000",
+                          text: "UPTO ₹1000",
                           style: TextStyle(
                               color: Colors.white,
-                              fontSize: 16,
+                              fontSize: 12,
                               fontFamily: "Avenir",
                               fontWeight: FontWeight.w600),
                         ),
@@ -112,7 +120,7 @@ class MarketplaceComponent extends StatelessWidget {
             ],
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 10),
+            padding: const EdgeInsets.all(5),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -121,13 +129,16 @@ class MarketplaceComponent extends StatelessWidget {
                   "Shiska Coaching Center",
                   style: TextStyle(
                       color: Colors.black,
-                      fontSize: 18,
+                      fontSize: 16,
                       fontFamily: "Avenir",
-                      fontWeight: FontWeight.w900),
+                      fontWeight: FontWeight.w800),
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
+                    const SizedBox(
+                      width: 2,
+                    ),
                     Image.asset(
                       "assets/img/badge.png",
                       scale: 0.8,
@@ -138,21 +149,21 @@ class MarketplaceComponent extends StatelessWidget {
                     const Text(
                       "4.5\t(100+ Ratings)",
                       style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 16,
+                          color: secondaryColor,
+                          fontSize: 12,
                           fontFamily: "Avenir",
                           fontWeight: FontWeight.w900),
                     ),
                   ],
                 ),
                 const SizedBox(
-                  height: 10,
+                  height: 15,
                 ),
                 const Text(
                   "All Subjects . Com . Sci",
                   style: TextStyle(
                       color: secondaryColor,
-                      fontSize: 18,
+                      fontSize: 13,
                       fontFamily: "Avenir",
                       fontWeight: FontWeight.w600),
                 ),
@@ -163,25 +174,25 @@ class MarketplaceComponent extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     Text(
-                      "Kalkaji",
+                      "Kalkaji ",
                       style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 16,
+                          color: secondaryColor,
+                          fontSize: 13,
                           fontFamily: "Avenir",
-                          fontWeight: FontWeight.w600),
+                          fontWeight: FontWeight.w400),
                     ),
                     Icon(
                       Icons.fiber_manual_record,
                       color: secondaryColor,
-                      size: 10,
+                      size: 5,
                     ),
                     Text(
                       " 1.5 km",
                       style: TextStyle(
                           color: secondaryColor,
-                          fontSize: 16,
+                          fontSize: 13,
                           fontFamily: "Avenir",
-                          fontWeight: FontWeight.w600),
+                          fontWeight: FontWeight.w400),
                     ),
                   ],
                 ),
@@ -190,18 +201,18 @@ class MarketplaceComponent extends StatelessWidget {
                 ),
                 Container(
                   padding: const EdgeInsets.all(10),
-                  width: width * 0.28,
                   decoration: BoxDecoration(
                     color: Colors.grey.withOpacity(0.2),
-                    borderRadius: BorderRadius.circular(20),
+                    borderRadius: BorderRadius.circular(10),
                   ),
                   child: const Text(
                     "View Details",
+                    textAlign: TextAlign.center,
                     style: TextStyle(
                         color: primaryColor,
-                        fontSize: 16,
+                        fontSize: 12,
                         fontFamily: "Avenir",
-                        fontWeight: FontWeight.w900),
+                        fontWeight: FontWeight.w800),
                   ),
                 ),
               ],

@@ -13,14 +13,14 @@ class Marketplace extends StatelessWidget {
       itemBuilder: (context, index) => Column(
         children: [
           SizedBox(
-            height: height * 0.3,
+            height: height * 0.23,
             width: width,
             child: const MarketplaceComponent(),
           ),
           const Divider(
             color: secondaryColor,
-            indent: 40,
-            endIndent: 40,
+            indent: 20,
+            endIndent: 20,
           )
         ],
       ),
