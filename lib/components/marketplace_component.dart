@@ -111,7 +111,7 @@ class MarketplaceComponent extends StatelessWidget {
               ),
               const Positioned(
                   bottom: 15,
-                  right: 5,
+                  right: 10,
                   child: Icon(
                     Icons.favorite_border_outlined,
                     size: 30,
